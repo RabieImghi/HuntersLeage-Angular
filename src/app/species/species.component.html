@@ -1,232 +1,57 @@
-<div class="font-[sans-serif] py-4 mx-auto lg:max-w-7xl sm:max-w-full ">
+<div class="font-[sans-serif] py-4 mx-auto lg:max-w-7xl sm:max-w-full">
     <h2 class="text-4xl font-extrabold text-orange-600 mb-12">Species Categories</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Dynamic Card Generation -->
+      <div
+        *ngFor="let species of speciesList"
+        class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative"
+      >
+        <!-- Heart Icon -->
+        <div
+          class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16px"
+            class="fill-orange-600 inline-block"
+            viewBox="0 0 64 64"
+          >
+            <path
+              d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
+            ></path>
+          </svg>
+        </div>
   
-        <div
-            class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-            <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-                <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-            </div>
-    
-            <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="l.png" alt="Species 1"
-                class="h-full w-full object-contain" />
-            </div>
-    
-            <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Aquatic</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 5.0kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Intermediate</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 15</p>
-            </div>
-        </div>
-    
-        <div
-            class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-            <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-                <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-            </div>
-    
-            <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="n.png" alt="Species 2"
-                class="h-full w-full object-contain" />
-            </div>
-    
-            <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Terrestrial</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 3.5kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Advanced</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 20</p>
-            </div>
-        </div>
-
-        <div
-        class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-        <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-            <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-        </div>
-
+        <!-- Image -->
         <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="f.png" alt="Species 2"
-            class="h-full w-full object-contain" />
-        </div>
-
+            <img 
+              [src]="species.category === 'SEA' ? 'f.png' : (species.category === 'BIG_GAME' ? 'l.png' : 'n.png')" 
+              alt="{{ species.name }}" 
+              class="h-full w-full object-contain" 
+            />
+          </div>
+  
+        <!-- Species Details -->
         <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Tona</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 3.5kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Advanced</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 25</p>
+          <h3 class="text-lg font-bold text-orange-600">{{ species.name }}</h3>
+          <h4 class="text-md text-gray-800 font-bold mt-2">Category: {{ species.category }}</h4>
+          <p class="text-gray-800 text-sm mt-2">
+            Minimum Weight: {{ species.minimumWeight }} kg
+          </p>
+          <p 
+            class="text-sm mt-2 py-1 px-3 rounded-md font-bold transition-all cursor-pointer"
+            [ngClass]="{
+                'bg-green-200 text-green-800 hover:bg-green-300': species.difficulty === 'COMMON',
+                'bg-yellow-200 text-yellow-800 hover:bg-yellow-300': species.difficulty === 'RARE',
+                'bg-orange-200 text-orange-800 hover:bg-orange-300': species.difficulty === 'EPIC',
+                'bg-red-200 text-red-800 hover:bg-red-300': species.difficulty === 'LEGENDARY'
+            }"
+            >
+            Difficulty: {{ species.difficulty }}
+            </p>
+          <p class="text-gray-800 text-sm mt-2">Points: {{ species.points }}</p>
         </div>
-        </div>
-
-
-        <div
-            class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-            <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-                <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-            </div>
-    
-            <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="l.png" alt="Species 1"
-                class="h-full w-full object-contain" />
-            </div>
-    
-            <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Aquatic</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 5.0kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Intermediate</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 15</p>
-            </div>
-        </div>
-    
-        <div
-            class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-            <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-                <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-            </div>
-    
-            <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="n.png" alt="Species 2"
-                class="h-full w-full object-contain" />
-            </div>
-    
-            <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Terrestrial</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 3.5kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Advanced</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 20</p>
-            </div>
-        </div>
-
-        <div
-        class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-        <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-            <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-        </div>
-
-        <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="f.png" alt="Species 2"
-            class="h-full w-full object-contain" />
-        </div>
-
-        <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Tona</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 3.5kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Advanced</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 25</p>
-        </div>
-        </div>
-        
-        <div
-            class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-            <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-                <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-            </div>
-    
-            <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="l.png" alt="Species 1"
-                class="h-full w-full object-contain" />
-            </div>
-    
-            <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Aquatic</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 5.0kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Intermediate</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 15</p>
-            </div>
-        </div>
-    
-        <div
-            class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-            <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-                <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-            </div>
-    
-            <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="n.png" alt="Species 2"
-                class="h-full w-full object-contain" />
-            </div>
-    
-            <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Terrestrial</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 3.5kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Advanced</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 20</p>
-            </div>
-        </div>
-
-        <div
-        class="bg-white shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">
-        <div
-            class="bg-[#FFF8E7] w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-3 right-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16px" class="fill-orange-600 inline-block" viewBox="0 0 64 64">
-            <path
-                d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                data-original="#000000"></path>
-            </svg>
-        </div>
-
-        <div class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-            <img src="f.png" alt="Species 2"
-            class="h-full w-full object-contain" />
-        </div>
-
-        <div class="p-6 bg-[#FFF8E7]">
-            <h3 class="text-lg font-bold text-orange-600">Species Name</h3>
-            <h4 class="text-md text-gray-800 font-bold mt-2">Category: Tona</h4>
-            <p class="text-gray-800 text-sm mt-2">Minimum Weight: 3.5kg</p>
-            <p class="text-gray-800 text-sm mt-2">Difficulty: Advanced</p>
-            <p class="text-gray-800 text-sm mt-2">Points: 25</p>
-        </div>
-        </div>
+      </div>
     </div>
   </div>
   
