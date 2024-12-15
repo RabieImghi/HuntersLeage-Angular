@@ -11,6 +11,8 @@ export class CompetitionsDetailsComponent implements OnInit {
   competitionId: string = '';
   competitionDetails: any; 
   apiUrl = 'http://localhost:443/api/competition/details'; 
+  participationUrl = 'http://localhost:443/api/participation/create';
+
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
@@ -37,6 +39,30 @@ export class CompetitionsDetailsComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error fetching competition details:', error);
+      },
+    });
+  }
+
+
+  registerForCompetition(): void {
+    const token = localStorage.getItem('tokenHuntersLeage');
+    const body = {
+      competitionId: this.competitionDetails.id,
+    };
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+
+    this.http.post(this.participationUrl, body, { headers }).subscribe({
+      next: (response) => {
+        console.log('Registration successful:', response);
+        alert('You have successfully registered for the competition!');
+      },
+      error: (error) => {
+        console.error('Error during registration:', error);
+        alert('Failed to register. Please try again later.');
       },
     });
   }
