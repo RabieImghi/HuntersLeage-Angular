@@ -32,7 +32,7 @@ export class LoginComponent {
         .post('http://localhost:443/api/auth/login', body, { headers })
         .subscribe({
           next: (response: any) => {
-            localStorage.setItem('token', response.jwt);
+            localStorage.setItem('tokenHuntersLeage', response.jwt);
             this.router.navigate(['']);
           },
           error: (error) => {

@@ -24,32 +24,37 @@
         </div>
   
         <!-- Details Section -->
-        <div class="lg:col-span-2">
-          <h2 class="text-2xl font-bold text-gray-800">Wildlife Photography Competition</h2>
+        <div class="lg:col-span-2"  *ngIf="competitionDetails; else loading">
+          <h2 class="text-2xl font-bold text-gray-800">{{ competitionDetails.code }}</h2>
           <div class="flex flex-wrap gap-4 mt-4">
-            <p class="text-gray-800 text-xl font-bold">Location: Yellowstone Park</p>
-            <p class="text-gray-400 text-xl"><span class="text-sm ml-1">Date: 2024-05-15</span></p>
+            <p class="text-gray-800 text-xl font-bold">Location: {{ competitionDetails.location }}</p>
+            <p class="text-gray-400 text-xl"><span class="text-sm ml-1">Date: {{ competitionDetails.date | date: 'd MMMM yyyy \'AT\' HH:mm' }}</span></p>
           </div>
   
-          <div class="flex space-x-2 mt-4">
-            <p class="text-gray-800 text-xl font-bold">Open Registration:</p>
-            <p class="text-orange-500 font-bold text-xl">Yes</p>
+          <div class="text-gray-800 text-xl flex space-x-2 mt-4">
+            <p class="font-bold">Open Registration:</p>
+            <P
+            [ngClass]="competitionDetails.openRegistration ? 'text-green-600 font-bold' : 'text-red-600 font-bold'"
+          >
+            {{ competitionDetails.openRegistration ? 'Yes' : 'No' }}
+          </P>
           </div>
   
           <div class="mt-8">
             <h3 class="text-xl font-bold text-gray-800">About the Competition</h3>
             <ul class="space-y-3 list-disc mt-4 pl-4 text-sm text-gray-800">
-              <li>Capture stunning wildlife moments in their natural habitat.</li>
-              <li>Participants will have access to expert guidance during the event.</li>
-              <li>Award categories include Best Photo, Most Unique Shot, and Audience Choice.</li>
-              <li>Open to photographers of all levels.</li>
+              <li>Participants: {{ competitionDetails.minParticipants }} to {{ competitionDetails.maxParticipants }}</li>
+              <li>Species Type: {{ competitionDetails.speciesType }}</li>
             </ul>
           </div>
   
-          <button type="button" class="w-full mt-8 px-6 py-3 bg-orange-400 hover:bg-orange-500 text-white text-sm font-semibold rounded-md">Register Now</button>
+          <button type="button" *ngIf="competitionDetails.openRegistration" class="w-full mt-8 px-6 py-3 bg-orange-400 hover:bg-orange-500 text-white text-sm font-semibold rounded-md">Register Now</button>
   
          
         </div>
+        <ng-template #loading>
+          <p class="text-center text-gray-600">Loading competition details...</p>
+        </ng-template>
       </div>
     </div>
   </div>

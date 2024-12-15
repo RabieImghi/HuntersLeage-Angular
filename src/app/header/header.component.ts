@@ -1,4 +1,6 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -8,10 +10,14 @@ import { Component, HostListener } from '@angular/core';
 export class HeaderComponent {
   isMenuOpen = false;
   isMobile = false;   
+  isLoggedIn = false;
+
+  constructor(private router: Router) {}
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  
 
   @HostListener('window:resize', [])
   onResize() {
@@ -20,5 +26,12 @@ export class HeaderComponent {
 
   ngOnInit() {
     this.onResize();
+    this.isLoggedIn = !!localStorage.getItem('tokenHuntersLeage');
+  }
+
+  logout() {
+    localStorage.removeItem('tokenHuntersLeage');
+    this.isLoggedIn = false;
+    this.router.navigate(['/']);
   }
 }
