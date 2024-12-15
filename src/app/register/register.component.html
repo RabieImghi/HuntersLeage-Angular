@@ -15,53 +15,46 @@
         </div>
       </div>
   
-      <form class="md:col-span-2 w-full py-6 px-6 sm:px-16">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="md:col-span-2 w-full py-6 px-6 sm:px-16">
         <div class="mb-6">
           <h3 class="text-orange-800 text-2xl font-bold">Create an account</h3>
         </div>
   
+        <!-- Input Fields -->
         <div class="space-y-6">
           <div>
-            <label class="text-orange-800 text-sm mb-2 block">Name</label>
+            <label class="text-orange-800 text-sm mb-2 block">First Name</label>
             <div class="relative flex items-center">
               <input
-                name="name"
+                formControlName="firstName"
                 type="text"
-                required
                 class="text-orange-800 bg-white border border-orange-400 w-full text-sm px-4 py-2.5 rounded-md outline-orange-500"
-                placeholder="Enter name"
+                placeholder="Enter first name"
               />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#bbb"
-                stroke="#bbb"
-                class="w-4 h-4 absolute right-4"
-                viewBox="0 0 24 24"
-              >
-                <!-- SVG paths here -->
-              </svg>
             </div>
           </div>
   
           <div>
-            <label class="text-orange-800 text-sm mb-2 block">Email Id</label>
+            <label class="text-orange-800 text-sm mb-2 block">Last Name</label>
             <div class="relative flex items-center">
               <input
-                name="email"
-                type="email"
-                required
+                formControlName="lastName"
+                type="text"
                 class="text-orange-800 bg-white border border-orange-400 w-full text-sm px-4 py-2.5 rounded-md outline-orange-500"
-                placeholder="Enter email"
+                placeholder="Enter last name"
               />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#bbb"
-                stroke="#bbb"
-                class="w-4 h-4 absolute right-4"
-                viewBox="0 0 682.667 682.667"
-              >
-                <!-- SVG paths here -->
-              </svg>
+            </div>
+          </div>
+  
+          <div>
+            <label class="text-orange-800 text-sm mb-2 block">Username</label>
+            <div class="relative flex items-center">
+              <input
+                formControlName="username"
+                type="text"
+                class="text-orange-800 bg-white border border-orange-400 w-full text-sm px-4 py-2.5 rounded-md outline-orange-500"
+                placeholder="Enter username"
+              />
             </div>
           </div>
   
@@ -69,21 +62,47 @@
             <label class="text-orange-800 text-sm mb-2 block">Password</label>
             <div class="relative flex items-center">
               <input
-                name="password"
+                formControlName="password"
                 type="password"
-                required
                 class="text-orange-800 bg-white border border-orange-400 w-full text-sm px-4 py-2.5 rounded-md outline-orange-500"
                 placeholder="Enter password"
               />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#bbb"
-                stroke="#bbb"
-                class="w-4 h-4 absolute right-4 cursor-pointer"
-                viewBox="0 0 128 128"
-              >
-                <!-- SVG paths here -->
-              </svg>
+            </div>
+          </div>
+  
+          <div>
+            <label class="text-orange-800 text-sm mb-2 block">CIN</label>
+            <div class="relative flex items-center">
+              <input
+                formControlName="cin"
+                type="text"
+                class="text-orange-800 bg-white border border-orange-400 w-full text-sm px-4 py-2.5 rounded-md outline-orange-500"
+                placeholder="Enter CIN"
+              />
+            </div>
+          </div>
+  
+          <div>
+            <label class="text-orange-800 text-sm mb-2 block">Email</label>
+            <div class="relative flex items-center">
+              <input
+                formControlName="email"
+                type="email"
+                class="text-orange-800 bg-white border border-orange-400 w-full text-sm px-4 py-2.5 rounded-md outline-orange-500"
+                placeholder="Enter email"
+              />
+            </div>
+          </div>
+  
+          <div>
+            <label class="text-orange-800 text-sm mb-2 block">Nationality</label>
+            <div class="relative flex items-center">
+              <input
+                formControlName="nationality"
+                type="text"
+                class="text-orange-800 bg-white border border-orange-400 w-full text-sm px-4 py-2.5 rounded-md outline-orange-500"
+                placeholder="Enter nationality"
+              />
             </div>
           </div>
   
@@ -101,17 +120,19 @@
           </div>
         </div>
   
+        <!-- Submit Button -->
         <div class="!mt-12">
           <button
-            type="button"
+            type="submit"
             class="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none"
           >
             Create an account
           </button>
         </div>
+  
         <p class="text-orange-800 text-sm mt-6 text-center">
           Already have an account?
-          <a href="javascript:void(0);" routerLink="/login" class="text-orange-600 font-semibold hover:underline ml-1">Login here</a>
+          <a routerLink="/login" class="text-orange-600 font-semibold hover:underline">Login here</a>
         </p>
       </form>
     </div>
