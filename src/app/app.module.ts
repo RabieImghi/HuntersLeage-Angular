@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,8 @@ import { ResultsComponent } from './results/results.component';
 import { MembersComponent } from './members/members.component';
 import { ResultsDetailsComponent } from './results-details/results-details.component';
 import { TopThreeUserComponent } from './top-three-user/top-three-user.component';
+import { provideHttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,13 +31,15 @@ import { TopThreeUserComponent } from './top-three-user/top-three-user.component
     ResultsComponent,
     MembersComponent,
     ResultsDetailsComponent,
-    TopThreeUserComponent
+    TopThreeUserComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule, 
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

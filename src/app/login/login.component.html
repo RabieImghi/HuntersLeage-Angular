@@ -1,7 +1,7 @@
 <div class="font-[sans-serif] min-h-screen flex flex-col items-center justify-center">
     <div class="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 m-4 shadow-[0_2px_10px_-3px_rgba(166,94,45,0.3)] rounded-md">
       <div class="md:max-w-md w-full px-4 py-4">
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="mb-12">
             <h3 class="text-orange-800 text-3xl font-extrabold">Sign in</h3>
             <p class="text-sm mt-4 text-orange-700">
@@ -11,14 +11,14 @@
           </div>
   
           <div>
-            <label class="text-orange-800 text-xs block mb-2">Email</label>
+            <label class="text-orange-800 text-xs block mb-2">Username</label>
             <div class="relative flex items-center">
               <input
-                name="email"
+               formControlName="username"
                 type="text"
                 required
                 class="w-full text-orange-800 text-sm border-b border-orange-400 focus:border-orange-600 px-2 py-3 outline-none"
-                placeholder="Enter email"
+                placeholder="Enter Username"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@
             <label class="text-orange-800 text-xs block mb-2">Password</label>
             <div class="relative flex items-center">
               <input
-                name="password"
+               formControlName="password"
                 type="password"
                 required
                 class="w-full text-orange-800 text-sm border-b border-orange-400 focus:border-orange-600 px-2 py-3 outline-none"
@@ -73,7 +73,7 @@
   
           <div class="mt-12">
             <button
-              type="button"
+              type="submit"
               class="w-full shadow-xl py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none"
             >
               Sign in
