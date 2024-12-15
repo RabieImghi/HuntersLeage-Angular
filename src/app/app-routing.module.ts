@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'results', component: ResultsComponent},
   { path: 'members', component: MembersComponent},
   { path: 'species', component: SpeciesComponent},
-  { path: 'resultsDetails', component: ResultsDetailsComponent},
+  { path: 'resultsDetails/:id', component: ResultsDetailsComponent},
   { path: 'topThreeUser', component: TopThreeUserComponent},
   
   { path: '', component: HeroComponent }
